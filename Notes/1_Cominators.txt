@@ -1,0 +1,70 @@
+--Types of combinators--
+1. Adjacent sibling
+2. General sibling
+3. Child
+4. Decendant
+
+--ADJACENT sibling--
+. Elements share the same parent
+. Second element comes immediately after first element
+
+Eg: <div>
+        <h2>Header</h2>
+        <p>paragraph</p>
+    </div>
+
+    h2+p{
+        color : red
+    }
+
+--GENERAL sibling--
+.Elements share the same parent
+.Second element comes after the first element but no need to
+come directly after it
+
+Eg: <div>
+        <h2>Header</h2>
+        <p>paragraph</p>
+        <h3>Header</h3>
+        <p>paragraph</p>
+    </div>
+
+    h2~p{
+        color : red
+    }
+
+--CHILD sibling--
+.Only styles the direct child of the parent element
+
+Eg: <div>
+        <div>Not applied</div>
+        <p>CSS applied<p>
+
+        <div>Not applied</div>
+            <article>
+                <p>Not applied</p>
+            </article>
+            <p>CSS applied </p>
+    </div>
+
+    div>p{
+        color:red
+    }
+
+--DESCENDANT sibling--
+.Second element is a descendant of the first element
+
+Eg: <div>
+        <div>Not applied</div>
+        <p>CSS applied</p>
+
+        <div>Not applied</div>
+            <article>
+                <p>CSS applied</p>
+            </article>
+        <p>CSS applied </p>    
+    </div>
+
+    div p {
+        color : red
+    }
